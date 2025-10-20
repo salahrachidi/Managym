@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Red+Hat+Display:wght@400;700;900&display=swap");
+body {
+	background: #f9f9f9;
+	font-family: "Red Hat Display", sans-serif;
+}
+
+.shadow {
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+}
+
+.profile-tab-nav {
+	min-width: 250px;
+}
+
+.tab-content {
+	flex: 1;
+}
+
+.form-group {
+	margin-bottom: 1.5rem;
+}
+
+.nav-pills a.nav-link {
+	padding: 15px 20px;
+	border-bottom: 1px solid #ddd;
+	border-radius: 0;
+	color: #333;
+}
+.nav-pills a.nav-link i {
+	width: 20px;
+}
+
+.img-circle img {
+	height: 100px;
+	width: 100px;
+	border-radius: 100%;
+	border: 5px solid #fff;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #dfa97a;
+}
+.btn-primary {
+    color: rgb(255, 255, 255);
+    background-color: #dfa97a;
+    border-color: rgb(255, 255, 255);
+}
+.btn-primary:hover{
+	color: #dfa97a;
+    background-color: rgb(255, 255, 255);
+    border-color: #dfa97a;
+}
+.btn-primary:focus{
+	color: #dfa97a !important;
+    background-color: rgb(255, 255, 255) !important;
+    border-color: #dfa97a !important;
+}
+
+
+
+
+.form-control:focus {
+    border-color: #ffffff;
+    box-shadow: 0 0 0 0.2rem #dfa97a;
+}
+
+.form-select:focus {
+    border-color: #ffffff;
+    box-shadow: 0 0 0 0.2rem #dfa97a;
+}
+#imgBtn{
+	color: #dfa97a;
+    background-color: rgb(255, 255, 255);
+    border-color: #dfa97a;
+}
+#imgBtn:hover{
+	color: rgb(255, 255, 255);
+    background-color: #dfa97a;
+    border-color: rgb(255, 255, 255);
+}
+h3{
+	font-family: 'Roboto';
+}

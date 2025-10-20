@@ -1,0 +1,101 @@
+input[type="radio"].demo1 {
+    display: none;
+}
+
+input[type="radio"].demo1+label {
+    padding: 0.3rem 0.5rem;
+    border: 1px dashed #ccc;
+}
+
+input[type="radio"].demo1:checked+label {
+    border: 1px solid var(--first-color);
+}
+
+
+.list-choice {
+    margin: 1em auto;
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+}
+
+.list-choice input[type="radio"] {
+    position: absolute;
+    left: -9999px;
+}
+
+.list-choice-title {
+    width: 100%;
+    display: block;
+    background: var(--body-color);
+    border: 1px solid var(--first-color);
+    text-align: center;
+    padding: 0.55em 1em;
+    box-sizing: border-box;
+    color: --first-color-gray;
+
+    border-radius: 0.2em;
+}
+
+.list-choice:hover .list-choice-title {
+    border-radius: 0.2em 0.2em 0 0;
+}
+
+.list-choice-objects label:nth-last-of-type(1) span {
+    border-radius: 0 0 0.2em 0.2em;
+}
+
+.list-choice input[type="radio"]+span {
+    color: var(--body-color);
+    background: var(--first-color);
+    padding: 0.55em 1em;
+    display: block;
+    text-align: center;
+    box-sizing: border-box;
+    cursor: pointer;
+    width: 100%;
+}
+
+.list-choice-objects {
+    position: absolute;
+    top: 0;
+    padding-top: 2.1em;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+    transition: all 250ms ease;
+}
+
+.list-choice:hover .list-choice-objects input[type="radio"]+span {
+    position: relative;
+    top: 0;
+    transition: all 250ms ease-in-out;
+}
+
+.list-choice:hover input[type="radio"]+span:hover {
+    background: var(--first-color-dark);
+}
+
+.list-choice:hover input[type="radio"]:checked+span:hover {
+    background: var(--body-color);
+    color: var(--title-color);
+}
+
+.list-choice input[type="radio"]:checked+span {
+    position: absolute;
+    top: 0em;
+    border-radius: 0.2em;
+}
+
+.list-choice:hover input[type="radio"]:checked+span {
+    border-radius: 0;
+}
+
+.list-choice:hover .list-choice-objects label:nth-last-of-type(1) input[type="radio"]:checked+span {
+    border-radius: 0 0 0.2em 0.2em;
+}
+
+.list-choice:hover .list-choice-objects {
+    max-height: 540px;
+}

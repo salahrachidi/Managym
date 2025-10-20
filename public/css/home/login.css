@@ -1,0 +1,23 @@
+.calculate__img {
+    width: 500px;
+    justify-self: center;
+}
+
+.calculate {
+    padding-bottom: 0;
+    padding-top: 10px;
+    margin-top: 150px;
+    margin-bottom: 80px;
+}
+
+section {
+    box-shadow: 0px -2px 5px -1px rgba(0, 0, 0, 1);
+    -webkit-box-shadow: 0px -2px 5px -1px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px -2px 5px -1px rgba(0, 0, 0, 1);
+}
+
+#login-form a {
+    text-decoration: underline;
+    color: var(--first-color-dark);
+    font-size: 15px;
+}
