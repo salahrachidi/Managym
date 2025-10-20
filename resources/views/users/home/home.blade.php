@@ -12,7 +12,17 @@
 
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="{{ asset('css/home/styles.css') }}" />
-
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+        .site-logo-wordmark {
+            font-family: "Bebas Neue", sans-serif;
+            letter-spacing: .03em;
+            font-size: 36px;
+            line-height: 1;
+            display: inline-block;
+            text-transform: uppercase;
+        }
+    </style>
     <title>Managym</title>
 </head>
 
@@ -21,8 +31,8 @@
     <header class="header" id="header">
         <nav class="nav container">
             <a href="/home" class="nav__logo">
-                <img src="{{ asset('images/logo/FullFormWhite_and_daklon.svg') }}"
-                    class="site-logo" alt="logo" style="width:200px;height:200px;">
+                <img src="{{ asset("images/logo/daklon.svg") }}" alt="Managym Logo" height="70px" width="70px">
+                <span class="site-logo-wordmark">Managym</span>
             </a>
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
@@ -362,7 +372,7 @@
         <div class="footer__container container grid">
             <div>
                 <a href="#" class="footer__logo">
-                    <img src="{{ asset('images/logo/daklon.svg') }}" class="site-logo" alt="logo" style="">
+                    <span class="site-logo-wordmark">Managym</span>
                 </a>
                 <p class="footer__description">
                     Do you want to report something <br> Write a message below.
