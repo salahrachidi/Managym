@@ -76,9 +76,6 @@ The IoT subsystem uses an **Arduino UNO** (or compatible board) connected to:
 - **LCD module** for feedback display  
 - **ESP8266 Wi‑Fi module** for data synchronization
 
-- ![Arduino Prototype Placeholder](hardware/arduino_prototype.jpg)  
-- 🎥 *Demo Video Placeholder* (insert YouTube or file link here)
-
 > 🧠 This system will mark member presence and send data directly to the Laravel backend via REST API endpoints.
 
 ---
