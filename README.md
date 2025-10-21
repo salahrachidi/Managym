@@ -67,8 +67,8 @@ It combines a clean dashboard interface, data visualization, and embedded IoT co
 | Fingerprint System | [▶️ Watch Video](https://photos.app.goo.gl/iBuDabD5xLwhQzVN9) |
 | LCD Feedback | [▶️ Watch Video](https://photos.app.goo.gl/5oXkHD55RvsrNwZ18) |
 | WiFi Sync | [▶️ Watch Video](https://photos.app.goo.gl/MkUuvfTVwPqRA3V6A) |
-| Access Denied Test | [▶️ Watch Video](https://photos.app.goo.gl/3cS91NDygWLQ4qy39) |
-| Upload to Server | [▶️ Watch Video](https://photos.app.goo.gl/3YKDgWjMLhMV3NXJ8) |
+| Access Denied Test | [▶️ Watch Video](https://photos.app.goo.gl/FhZvasABsDTSCndx8) |
+| Upload to Server | [▶️ Watch Video](https://photos.app.goo.gl/htKKHcUDemkS6JXF7) |
 | Full System Overview | [▶️ Watch Video](https://photos.app.goo.gl/kPcoG6MH21QHjAZe6) |
 
 The IoT subsystem uses an **Arduino UNO** (or compatible board) connected to:  
