@@ -39,7 +39,7 @@ It combines a clean dashboard interface, data visualization, and embedded IoT co
 
 ## 🖼️ Screenshots (Dashboard & Modules)
 
-> 📸 Below are key UI sections of the platform — replace with your actual images.
+> 📸 Below are key UI sections of the platform.
 
 | Dashboard | Members | Coaches |
 |------------|----------|----------|
