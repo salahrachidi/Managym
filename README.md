@@ -43,9 +43,9 @@ It combines a clean dashboard interface, data visualization, and embedded IoT co
 
 | Dashboard | Members | Coaches |
 |------------|----------|----------|
-| ![Dashboard Placeholder](https://github.com/salahrachidi/Managym/blob/main/screenshots/12.png) | ![Members Placeholder](https://github.com/salahrachidi/Managym/blob/main/screenshots/12.png) | ![Coaches Placeholder](https://github.com/salahrachidi/Managym/blob/main/screenshots/13.png) |
+| ![Dashboard Placeholder](https://github.com/salahrachidi/Managym/blob/main/screenshots/1.png) | ![Members Placeholder](https://github.com/salahrachidi/Managym/blob/main/screenshots/12.png) | ![Coaches Placeholder](https://github.com/salahrachidi/Managym/blob/main/screenshots/13.png) |
 
-| Account | Account | Transformations |
+| Register | Account | Transformations |
 |-----------|-----------|-------------|
 | ![Packages Placeholder](https://github.com/salahrachidi/Managym/blob/main/screenshots/14.png) | ![Acccount Placeholder](https://github.com/salahrachidi/Managym/blob/main/screenshots/7.png) | ![Transformations Placeholder](https://github.com/salahrachidi/Managym/blob/main/screenshots/9.png) |
 
