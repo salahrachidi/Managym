@@ -1,66 +1,113 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🏋️‍♂️ Managym — Smart Gym Management Platform
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A full-stack gym management and attendance tracking platform built with **Laravel**, **AJAX/jQuery**, and **Chart.js**.  
+It centralizes member data, payments, coach assignments, and attendance tracking, with a future plan to integrate an **Arduino‑based entry system** for automated check‑ins.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🚀 Overview
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+**Managym** was developed as a modern, data‑driven gym management solution to streamline operations for small and medium fitness centers.  
+It combines a clean dashboard interface, data visualization, and embedded IoT concepts to demonstrate both web and hardware integration.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## 🧰 Tech Stack
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+| Layer | Technologies |
+|-------|---------------|
+| **Frontend** | HTML5, CSS3, Bootstrap 5, JavaScript, jQuery, AJAX |
+| **Backend** | Laravel (PHP Framework) |
+| **Database** | SQLite (for local testing), MySQL (production) |
+| **Data Visualization** | Chart.js |
+| **Hardware (planned)** | Arduino + RFID / Fingerprint Sensor |
+| **Development Tools** | Arduino IDE, Figma (UI), VSCode |
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## ⚙️ Features
 
-## Laravel Sponsors
+- 👥 **Member Management:** register, update, and manage members, packages, and payments.  
+- 🧑‍🏫 **Coach Assignments:** link members to coaches, track performance and sessions.  
+- 📊 **Dashboard Analytics:** visualize data through dynamic charts (members/month, gender ratio, status, etc.).  
+- 💳 **Payment & Subscription Tracking:** monitor active and inactive memberships.  
+- 🧾 **Automated Attendance System (Prototype):** powered by Arduino hardware (RFID/fingerprint).  
+- 🧠 **Real-time Statistics:** built with Chart.js, updated via AJAX without page reload.  
+- 🧩 **Flexible Architecture:** designed to scale or integrate with IoT devices.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+---
 
-### Premium Partners
+## 🖼️ Screenshots (Dashboard & Modules)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+> 📸 Below are key UI sections of the platform.
 
-## Contributing
+| Dashboard | Members | Coaches |
+|------------|----------|----------|
+| ![Dashboard Placeholder](screenshots/dashboard.png) | ![Members Placeholder](screenshots/members.png) | ![Coaches Placeholder](screenshots/coaches.png) |
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+| Packages | Payments | Statistics |
+|-----------|-----------|-------------|
+| ![Packages Placeholder](screenshots/packages.png) | ![Payments Placeholder](screenshots/payments.png) | ![Charts Placeholder](screenshots/charts.png) |
 
-## Code of Conduct
+| Attendance | Settings | Login |
+|-------------|-----------|--------|
+| ![Attendance Placeholder](screenshots/attendance.png) | ![Settings Placeholder](screenshots/settings.png) | ![Login Placeholder](screenshots/login.png) |
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+---
 
-## Security Vulnerabilities
+## 🔌 Arduino Attendance System (Prototype)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+The IoT subsystem uses an **Arduino UNO** (or compatible board) connected to:  
+- **RFID reader** or **fingerprint sensor** for member authentication  
+- **LCD module** for feedback display  
+- **ESP8266 Wi‑Fi module** for data synchronization
 
-## License
+- ![Arduino Prototype Placeholder](hardware/arduino_prototype.jpg)  
+- 🎥 *Demo Video Placeholder* (insert YouTube or file link here)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+> 🧠 This system will mark member presence and send data directly to the Laravel backend via REST API endpoints.
+
+---
+
+## 🧪 Local Setup (Development)
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/managym.git
+cd managym
+
+# Install PHP dependencies
+composer install
+
+# Copy environment file and configure
+cp .env.example .env
+
+# Generate app key
+php artisan key:generate
+
+# Configure database (SQLite/MySQL in .env)
+php artisan migrate --seed
+
+# Run the development server
+php artisan serve
+```
+
+---
+
+## 🧠 Learning Outcomes
+
+- Full‑stack development with Laravel & AJAX.  
+- Real‑time chart rendering using Chart.js.  
+- Database design for relational fitness data.  
+- Hardware/software integration concepts with Arduino.  
+- Agile iteration, version control, and UI design practice.
+
+---
+
+## 👨‍💻 Author
+
+**Salaheddine Rachidi** — [@salahrachidi](https://github.com/salahrachidi) 
+
+---
+
+📚 *Project developed as part of my software engineering learning journey — combining web development and IoT automation.*
