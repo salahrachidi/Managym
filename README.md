@@ -59,44 +59,17 @@ It combines a clean dashboard interface, data visualization, and embedded IoT co
 
 ---
 
-## 🎥 Arduino Attendance System — Video Demos
+## 🎥 Arduino Attendance Demos
 
-<table>
-  <tr>
-    <td align="center">
-      <b>1️⃣ RFID Login Demo</b><br>
-      <video src="https://github.com/salahrachidi/Managym/blob/main/arduino/1.mp4" width="300" controls></video>
-    </td>
-    <td align="center">
-      <b>2️⃣ Fingerprint Entry</b><br>
-      <video src="https://github.com/salahrachidi/Managym/blob/main/hardware/videos/fingerprint.mp4" width="300" controls></video>
-    </td>
-    <td align="center">
-      <b>3️⃣ LCD + WiFi Feedback</b><br>
-      <video src="https://github.com/salahrachidi/Managym/blob/main/hardware/videos/lcd_feedback.mp4" width="300" controls></video>
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <b>4️⃣ Access Denied Test</b><br>
-      <video src="https://github.com/salahrachidi/Managym/blob/main/hardware/videos/access_denied.mp4" width="300" controls></video>
-    </td>
-    <td align="center">
-      <b>5️⃣ Member Attendance Upload</b><br>
-      <video src="https://github.com/salahrachidi/Managym/blob/main/hardware/videos/upload.mp4" width="300" controls></video>
-    </td>
-    <td align="center">
-      <b>6️⃣ ESP8266 Communication</b><br>
-      <video src="https://github.com/salahrachidi/Managym/blob/main/hardware/videos/esp8266.mp4" width="300" controls></video>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="3" align="center">
-      <b>7️⃣ Full System Overview</b><br>
-      <video src="https://github.com/salahrachidi/Managym/blob/main/hardware/videos/overview.mp4" width="500" controls></video>
-    </td>
-  </tr>
-</table>
+| Demo | Link |
+|------|------|
+| RFID Attendance | [▶️ Watch Video](https://photos.app.goo.gl/6K4nFb4sfAK54twc7) |
+| Fingerprint System | [▶️ Watch Video](https://photos.app.goo.gl/iBuDabD5xLwhQzVN9) |
+| LCD Feedback | [▶️ Watch Video](https://photos.app.goo.gl/5oXkHD55RvsrNwZ18) |
+| WiFi Sync | [▶️ Watch Video](https://photos.app.goo.gl/MkUuvfTVwPqRA3V6A) |
+| Access Denied Test | [▶️ Watch Video](https://photos.app.goo.gl/3cS91NDygWLQ4qy39) |
+| Upload to Server | [▶️ Watch Video](https://photos.app.goo.gl/3YKDgWjMLhMV3NXJ8) |
+| Full System Overview | [▶️ Watch Video](https://photos.app.goo.gl/kPcoG6MH21QHjAZe6) |
 
 The IoT subsystem uses an **Arduino UNO** (or compatible board) connected to:  
 - **RFID reader** or **fingerprint sensor** for member authentication  
