@@ -24,75 +24,75 @@ class profileController extends Controller
         //charts
         //-------------------------------------------------------------------
         $id = session()->get('user_id');
-        $subscriptionWeek = DB::table('presences')
-            ->select(DB::raw('@subscription_week := WEEK(MIN(created_at))'))
-            ->where('personnel_id', $id)
-            ->value('subscription_week');
-        //dd($subscriptionWeek);
-        $results = DB::table('presences')
-            ->select(
-                DB::raw('WEEK(created_at) - ' . $subscriptionWeek . ' + 1 AS week_number'),
-                DB::raw('COUNT(*) AS presence_count')
-            )
-            ->where('personnel_id', $id)
-            ->groupBy('personnel_id', 'week_number')
-            ->get()
-            ->toArray();
-        //fill the gap between the weeks
-        //______________________________________________ILA MAKAN HTÁCHI PRESENCE BL ID DYAL KHONA LI DAKHL L PROFIL DYALO ITLA3 LIK ERROR
-        if (count($results) != 0) {
-            $finalResults = [];
-            for ($i = 0; $i < count($results); $i++) {
-                $finalResults[] = $results[$i]; // Check if there is a gap between the current and next week numbers
-                if ($i < count($results) - 1 && $results[$i]->week_number != ($results[$i + 1]->week_number - 1)) {
-                    $missingWeeks = $results[$i + 1]->week_number - $results[$i]->week_number - 1;
-                    // Add the missing week numbers with a presence count of 0
-                    for ($j = 1; $j <= $missingWeeks; $j++) {
-                        $finalResults[] = (object) ['week_number' => $results[$i]->week_number + $j, 'presence_count' => 0];
-                    }
-                }
-            }
-            foreach ($finalResults as $row) {
-                $weeks[] = $row->week_number;
-                $nbrpre[] = $row->presence_count;
-            }
-            foreach ($weeks as $number) {
-                $weekx[] = 'week ' . $number;
-            }
-        } else {
-            //dd('kda');
-            $weekx = ['week 1'];
-            $nbrpre = [0];
-            //dd([$weekx,$nbrpre]);
-        }
-        //------------------------------------------------------------------- payment tracker
-        $daysSincePayment = DB::table('payments')
-            ->selectRaw('DATEDIFF(CURDATE(), created_at) AS days_since_payment')
-            ->where('personnel_id', $id)
-            ->orderBy('created_at', 'DESC')
-            ->limit(1)
-            ->get()
-            ->toArray();
+        // $subscriptionWeek = DB::table('presences')
+        //     ->select(DB::raw('@subscription_week := WEEK(MIN(created_at))'))
+        //     ->where('personnel_id', $id)
+        //     ->value('subscription_week');
+        // //dd($subscriptionWeek);
+        // $results = DB::table('presences')
+        //     ->select(
+        //         DB::raw('WEEK(created_at) - ' . $subscriptionWeek . ' + 1 AS week_number'),
+        //         DB::raw('COUNT(*) AS presence_count')
+        //     )
+        //     ->where('personnel_id', $id)
+        //     ->groupBy('personnel_id', 'week_number')
+        //     ->get()
+        //     ->toArray();
+        // //fill the gap between the weeks
+        // //______________________________________________ILA MAKAN HTÁCHI PRESENCE BL ID DYAL KHONA LI DAKHL L PROFIL DYALO ITLA3 LIK ERROR
+        // if (count($results) != 0) {
+        //     $finalResults = [];
+        //     for ($i = 0; $i < count($results); $i++) {
+        //         $finalResults[] = $results[$i]; // Check if there is a gap between the current and next week numbers
+        //         if ($i < count($results) - 1 && $results[$i]->week_number != ($results[$i + 1]->week_number - 1)) {
+        //             $missingWeeks = $results[$i + 1]->week_number - $results[$i]->week_number - 1;
+        //             // Add the missing week numbers with a presence count of 0
+        //             for ($j = 1; $j <= $missingWeeks; $j++) {
+        //                 $finalResults[] = (object) ['week_number' => $results[$i]->week_number + $j, 'presence_count' => 0];
+        //             }
+        //         }
+        //     }
+        //     foreach ($finalResults as $row) {
+        //         $weeks[] = $row->week_number;
+        //         $nbrpre[] = $row->presence_count;
+        //     }
+        //     foreach ($weeks as $number) {
+        //         $weekx[] = 'week ' . $number;
+        //     }
+        // } else {
+        //     //dd('kda');
+        //     $weekx = ['week 1'];
+        //     $nbrpre = [0];
+        //     //dd([$weekx,$nbrpre]);
+        // }
+        // //------------------------------------------------------------------- payment tracker
+        // $daysSincePayment = DB::table('payments')
+        //     ->selectRaw('DATEDIFF(CURDATE(), created_at) AS days_since_payment')
+        //     ->where('personnel_id', $id)
+        //     ->orderBy('created_at', 'DESC')
+        //     ->limit(1)
+        //     ->get()
+        //     ->toArray();
 
-        if (count($daysSincePayment)) {
-            $daysSincePayment = $daysSincePayment[0]->days_since_payment;
-            $ArrdaysSincePayment[] = $daysSincePayment;
-        } else {
-            $ArrdaysSincePayment[] = 0;
-        }
-        //charts
-        if($ArrdaysSincePayment[0] >= 30 ){
-            $ArrdaysSincePayment[0] = 30 ;
-        }
-        //dd($user->per_pic);
-                $coachs = coach::all();
+        // if (count($daysSincePayment)) {
+        //     $daysSincePayment = $daysSincePayment[0]->days_since_payment;
+        //     $ArrdaysSincePayment[] = $daysSincePayment;
+        // } else {
+        //     $ArrdaysSincePayment[] = 0;
+        // }
+        // //charts
+        // if($ArrdaysSincePayment[0] >= 30 ){
+        //     $ArrdaysSincePayment[0] = 30 ;
+        // }
+        // //dd($user->per_pic);
+        //         $coachs = coach::all();
 
         return view('users.home', [
-            'user' => $user,
-            'weekx' => $weekx,
-            'nbrpre' => $nbrpre,
-            'ArrdaysSincePayment' => $ArrdaysSincePayment,
-            'coachs' => $coachs,
+            // 'user' => $user,
+            // 'weekx' => $weekx,
+            // 'nbrpre' => $nbrpre,
+            // 'ArrdaysSincePayment' => $ArrdaysSincePayment,
+            // 'coachs' => $coachs,
         ]);
     }
 
@@ -145,44 +145,76 @@ class profileController extends Controller
         return redirect('/profile/account')->with('successUp', 'informations updated successfully.');
     }
     // /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    public function transformation()
-    {
-        $personnels = personnel::all()->where('per_role', '=', 0);
-        $coaches = coach::all();
-        $id = session()->get('user_id');
-        $user = personnel::find($id);
-        $trans = transformation::where('personnel_id','=',$id)->get();
-        //-----------------------------------------
-        $results = DB::table('transformations AS t')
-                ->join('personnels AS m', 't.personnel_id', '=', 'm.id')
-                ->selectRaw('WEEK(t.created_at) - WEEK(m.created_at) + 1 AS week_number, MAX(t.tra_poid) AS tra_poid')
-                ->where('t.personnel_id', $id)
-                ->groupBy('week_number')
-                ->orderBy('week_number')
-                ->get()
-                ->toArray();
-                //-----------------------------------------
-        if (count($results) != 0) {
-            foreach ($results as $row) {
-                $weekss[] = $row->week_number;
-                $poids[] = intval($row->tra_poid);
-            }
-            foreach ($weekss as $number) {
-                $weekx[] = 'week ' . $number;
-            }
-            } else {
-                $weekx = ['1 week'];
-                $poids = [0];
-            }
-        return view('users.transformation', [
-            'trans' => $trans,
-            'coaches' => $coaches,
-            'personnels' => $personnels,
-            'user' => $user,
-            'weekx' => $weekx,
-            'poids' => $poids,
-        ]);
-    }
+public function transformation()
+{
+    // --- Static demo data: no database required ---
+
+    // Mock current user
+    $user = (object) [
+        'id'         => 1,
+        'per_nom'    => 'Rachidi',
+        'per_prenom' => 'Salaheddine',
+        'per_email'  => 'salah@example.com',
+        'per_pic'    => 'default.png',
+        'per_role'   => 0,
+    ];
+
+    // Mock personnel list (only members with per_role = 0)
+    $personnels = collect([
+        (object) ['id' => 1, 'per_nom' => 'Member', 'per_prenom' => 'One', 'per_role' => 0],
+        (object) ['id' => 2, 'per_nom' => 'Member', 'per_prenom' => 'Two', 'per_role' => 0],
+    ]);
+
+    // Mock coaches
+    $coaches = collect([
+        (object) ['id' => 1, 'coa_nom' => 'Coach', 'coa_prenom' => 'Alpha'],
+        (object) ['id' => 2, 'coa_nom' => 'Coach', 'coa_prenom' => 'Beta'],
+    ]);
+
+    // Mock transformations for the chart/cards
+    $trans = collect([
+        (object) [
+            'tra_description' => 'Week 1 progress',
+            'tra_pic1'        => 'sample1.jpg',
+            'tra_poid'        => 92,
+            'tra_duree'       => 7,
+            'coach_id'        => 1,
+            'personnel_id'    => 1,
+            'created_at'      => now()->subWeeks(3),
+        ],
+        (object) [
+            'tra_description' => 'Week 2 progress',
+            'tra_pic1'        => 'sample2.jpg',
+            'tra_poid'        => 90,
+            'tra_duree'       => 7,
+            'coach_id'        => 1,
+            'personnel_id'    => 1,
+            'created_at'      => now()->subWeeks(2),
+        ],
+        (object) [
+            'tra_description' => 'Week 3 progress',
+            'tra_pic1'        => 'sample3.jpg',
+            'tra_poid'        => 88,
+            'tra_duree'       => 7,
+            'coach_id'        => 2,
+            'personnel_id'    => 1,
+            'created_at'      => now()->subWeeks(1),
+        ],
+    ]);
+
+    // Static chart data for weight over weeks
+    $weekx = ['week 1', 'week 2', 'week 3', 'week 4'];
+    $poids = [92, 90, 88, 86];
+
+    return view('users.transformation', [
+        'trans'       => $trans,
+        'coaches'     => $coaches,
+        'personnels'  => $personnels,
+        'user'        => $user,
+        'weekx'       => $weekx,
+        'poids'       => $poids,
+    ]);
+}
     // //////////////////////////////////////////////////
     public function addTransUser(Request $request, string $id)
     {

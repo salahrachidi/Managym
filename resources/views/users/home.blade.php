@@ -5,13 +5,13 @@
 
     <div class="p-4">
         <div class="img-circle text-center mb-3">
-            @if ($user->per_pic )
+            {{-- @if ($user->per_pic )
                 <img src="{{ asset('images/profiles/' . $user->per_pic) }}" alt="Image" class="shadow">
-            @else
-                <minidenticon-svg username="{{ $user->per_nom . ' ' . $user->per_prenom }}"></minidenticon-svg>
-            @endif
+            @else --}}
+                {{-- <minidenticon-svg username="{{ $user->per_nom . ' ' . $user->per_prenom }}"></minidenticon-svg> --}}
+            {{-- @endif --}}
         </div>
-        <h4 class="text-center">{{ $user->per_nom }} {{ $user->per_prenom }}</h4>
+        {{-- <h4 class="text-center">{{ $user->per_nom }} {{ $user->per_prenom }}</h4> --}}
         <div style=" margin: auto; width: 180px;">
             <button class="btn btn-primary" id="imgBtn" onClick="location.href='/profile/account'">
                 <i class="fa fa-image text-center mr-1"></i>upload new image
@@ -146,11 +146,11 @@
 
         <div class="container content1 mb-3">
             <div class="charts mr-5" style="width: 100%;">
-                <canvas id="myChart3" height="200px" width=""> </canvas>
+                <canvas id="myChart3" height="200px" width="" data-labels='["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]' data-values='[2,3,1,4,2,0,0]'> </canvas>
             </div>
 
             <div class="charts" style="width: 100%;">
-                <canvas id="myChart5" height="200px" width=""> </canvas>
+                <canvas id="myChart5" height="200px" width="" data-days='[12]'> </canvas>
             </div>
         </div><br>
 
@@ -170,129 +170,99 @@
         integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
     </script>
     <script>
-        //Your Presence Status
-        var colArray = [];
-        var rowArray = @json($weekx);
-        var rowArraynbrpre = @json($nbrpre);
-        for (let i = 0; i < rowArray.length; i++) {
-            colArray.push('rgb(223, 169, 122)');
-        }
-        let myChart3 = document.getElementById("myChart3").getContext("2d");
-        const YourPresenceStatus = new Chart(myChart3, {
-            type: "bar",
-            data: {
-                labels: rowArray,
-                datasets: [{
-                    label: "sessions per Week",
-                    data: rowArraynbrpre,
-                    backgroundColor: colArray,
-                    borderColor: "rgb(51, 51, 51)", // Custom border color
-                    pointBackgroundColor: "rgb(51, 51, 51)", // Custom point color
-                    pointBorderColor: "rgb(223, 169, 122)", // Custom point border color
-                    pointHoverBackgroundColor: "rgba(255, 255, 255, 1)", // Custom point hover color
-                    pointHoverBorderColor: "rgba(54, 162, 235, 1)", // Custom point hover border color
-                    borderWidth: 2, // Custom border width
+        // Your Presence Status (framework-agnostic)
+        (function () {
+            // Read labels and values from data attributes (fallback defaults provided)
+            const chart3El = document.getElementById("myChart3");
+            const labelsRaw = chart3El?.dataset?.labels || '["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]';
+            const valuesRaw = chart3El?.dataset?.values || "[1,2,1,3,2,0,0]";
+            let rowArray, rowArraynbrpre;
+            try { rowArray = JSON.parse(labelsRaw); } catch { rowArray = String(labelsRaw).split(","); }
+            try { rowArraynbrpre = JSON.parse(valuesRaw); } catch { rowArraynbrpre = []; }
 
-                }, ],
-            },
-            options: {
-                title: {
-                    display: true,
-                    text: "Your Presence Status",
-                    fontSize: 18,
+            // Build color array to match labels length
+            const colArray = Array.from({ length: rowArray.length }, () => "rgb(223, 169, 122)");
+
+            const ctx3 = chart3El.getContext("2d");
+            new Chart(ctx3, {
+                type: "bar",
+                data: {
+                    labels: rowArray,
+                    datasets: [{
+                        label: "sessions per Week",
+                        data: rowArraynbrpre,
+                        backgroundColor: colArray,
+                        borderColor: "rgb(51, 51, 51)",
+                        pointBackgroundColor: "rgb(51, 51, 51)",
+                        pointBorderColor: "rgb(223, 169, 122)",
+                        pointHoverBackgroundColor: "rgba(255, 255, 255, 1)",
+                        pointHoverBorderColor: "rgba(54, 162, 235, 1)",
+                        borderWidth: 2,
+                    }],
                 },
-                legend: {
-                    display: true, //display/hide the legend
-                    position: "top",
-                    labels: {
-                        fontColor: "#000",
-                    },
-                },
-                scales: {
-                    y: {
-                        suggestedMin: 1,
-                        suggestedMax: 7,
-                        grid: {
-                            color: "rgba(200, 200, 200, 0.2)", // Custom grid color
-                        },
-                        ticks: {
-                            fontColor: "#333", // Custom tick font color
-                        },
-                    },
-                    x: {
-                        grid: {
-                            display: false, // Hide x-axis grid lines
-                        },
-                        ticks: {
-                            fontColor: "#333", // Custom tick font color
-                        },
-                    },
+                options: {
                     responsive: true,
                     maintainAspectRatio: false,
-                }
-            },
-        });
-        //Subscription counter
-        //Payment Tracker
-        var days = @json($ArrdaysSincePayment);
-        let myChart5 = document.getElementById("myChart5").getContext("2d");
-
-        // Determine the background color based on the value of ArrdaysSincePayment
-        const backgroundColors = days.map(function(days) {
-            if (days <= 10) {
-                return 'rgba(144, 238, 144, 0.8)'; // Soft green
-            } else if (days >= 11 && days <= 25) {
-                return 'rgba(255, 165, 0, 0.8)'; // Soft orange
-            } else if (days >= 26 && days <= 29) {
-                return 'rgba(255, 99, 71, 0.8)'; // Soft red
-            } else {
-                return 'rgba(255, 0, 0, 0.8)'; // Red
-            }
-        });
-
-        let PaymentTracker = new Chart(myChart5, {
-            type: "bar",
-            data: {
-                labels: [''],
-                datasets: [{
-                    label: "Payment Tracker",
-                    data: @json($ArrdaysSincePayment),
-                    backgroundColor: backgroundColors,
-                    borderColor: "rgb(51, 51, 51)",
-                    borderWidth: 0.7,
-                }],
-            },
-            options: {
-                aspectRatio: 5,
-                indexAxis: 'y',
-                scales: {
-                    y: {
-                        grid: {
-                            display: false, // Hide the grid lines
+                    plugins: {
+                        title: { display: true, text: "Your Presence Status", font: { size: 18 } },
+                        legend: { display: true, position: "top", labels: { color: "#000" } },
+                    },
+                    scales: {
+                        y: {
+                            suggestedMin: 1,
+                            suggestedMax: 7,
+                            grid: { color: "rgba(200, 200, 200, 0.2)" },
+                            ticks: { color: "#333" },
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { color: "#333" },
                         },
                     },
-                    x: {
-                        suggestedMin: 20,
-                        suggestedMax: 30,
+                },
+            });
 
+            // Payment Tracker (framework-agnostic)
+            const chart5El = document.getElementById("myChart5");
+            const daysRaw = chart5El?.dataset?.days || "[15]";
+            let days = [];
+            try { days = JSON.parse(daysRaw); } catch { days = [15]; }
+
+            const backgroundColors = days.map(function (d) {
+                if (d <= 10) return "rgba(144, 238, 144, 0.8)";     // Soft green
+                if (d >= 11 && d <= 25) return "rgba(255, 165, 0, 0.8)"; // Soft orange
+                if (d >= 26 && d <= 29) return "rgba(255, 99, 71, 0.8)"; // Soft red
+                return "rgba(255, 0, 0, 0.8)";                       // Red
+            });
+
+            const ctx5 = chart5El.getContext("2d");
+            new Chart(ctx5, {
+                type: "bar",
+                data: {
+                    labels: [""],
+                    datasets: [{
+                        label: "Payment Tracker",
+                        data: days,
+                        backgroundColor: backgroundColors,
+                        borderColor: "rgb(51, 51, 51)",
+                        borderWidth: 0.7,
+                    }],
+                },
+                options: {
+                    responsive: true,
+                    aspectRatio: 5,
+                    indexAxis: "y",
+                    plugins: {
+                        title: { display: true, text: "Payment Tracker", font: { size: 18 } },
+                        legend: { display: true, position: "right", labels: { color: "#000" } },
                     },
-                },
-                title: {
-                    display: true,
-                    text: "Payment Tracker",
-                    fontSize: 18,
-                },
-                legend: {
-                    display: true,
-                    position: "right",
-                    labels: {
-                        fontColor: "#000",
+                    scales: {
+                        y: { grid: { display: false } },
+                        x: { suggestedMin: 20, suggestedMax: 30 },
                     },
+                    animation: { duration: 2000 },
                 },
-                animation: {
-                    duration: 2000, // Animation duration in milliseconds
-                },
-            },
-        });
+            });
+        })();
     </script>
 @endsection

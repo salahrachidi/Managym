@@ -52,7 +52,7 @@ Route::middleware('isAlreadyLoggedIn')->group(function(){
 });
 Route::get('/logout', [authController::class, 'logout']);
 
-Route::middleware('isLoggedIn')->group(function () {
+// Route::middleware('isLoggedIn')->group(function () {
 
     //hna adir aya route ye9der user yewsal lih walakin admin la
     Route::middleware(['IsAdmin', 'IsNewUser'])->group(function () {
@@ -73,7 +73,7 @@ Route::middleware('isLoggedIn')->group(function () {
 
 
     //hna adir aya route khas ghir l admin yewsal lih ol user la
-    Route::middleware('IsUser')->group(function () {
+    // Route::middleware('IsUser')->group(function () {
         // ;; CREATE ADMIN
         Route::get('/createAdmin', [UserController::class, 'createAdmin'])->name('createAdmin');
         Route::post('/createAdmin/storeAdmin', [UserController::class, 'storeAdmin'])->name('storeAdmin');
@@ -117,8 +117,8 @@ Route::middleware('isLoggedIn')->group(function () {
         Route::delete('/notification/clear',[NotifiactionsController::class,'clearAll']);
         Route::delete('/notification/clearpa',[NotifiactionsController::class,'clearpa']);
 
-    });
-});
+    // });
+// });
 
         // Route::resource('/members', personnelController::class);
 

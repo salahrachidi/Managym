@@ -6,6 +6,17 @@
     <link rel="stylesheet" href="{{ asset('css/dashHome.css') }}" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
+    @php
+        $packages      = $packages      ?? ['Basic','Pro','Elite'];
+        $membersArray  = $membersArray  ?? [64,44,20];
+        $monthNames    = $monthNames    ?? ['January','February','March','April','May','June','July','August','September','October','November','December'];
+        $mPm           = $mPm           ?? [5,9,12,8,11,6,10,13,7,9,8,10];
+        $years         = $years         ?? [2023,2024,2025];
+        $mPY           = $mPY           ?? [86,124,128];
+        $status        = $status        ?? [98,30];
+        $Sexe          = $Sexe          ?? [78,50];
+    @endphp
+
 
 
 
@@ -76,25 +87,27 @@
                 <tr>
                     <td class="th1"><b>{{ $personnelPresent->id }}</b></td>
                     <td>{{ $personnelPresent->per_nom.' '.$personnelPresent->per_prenom }}</td>
-                    <td>{{ $personnelPresent->package->pac_title }}</td>
+                    <td>{{ data_get($personnelPresent, 'package.pac_title', 'Basic') }}</td>
                     <td>
-                        @if ($personnelPresent->coach_id)
-                            {{ $personnelPresent->coach->coa_nom . ' ' . $personnelPresent->coach->coa_prenom }}
+                        @php
+                            $coachName = trim((string) data_get($personnelPresent, 'coach.coa_nom', '') . ' ' . (string) data_get($personnelPresent, 'coach.coa_prenom', ''));
+                        @endphp
+                        @if ($coachName !== '')
+                            {{ $coachName }}
                         @else
                             <p class="text-primary"><b>Auto-coaching</b></p>
                         @endif
                     </td>
                     <td>
-                        @if($daysLeftArray[$personnelPresent->id] != null )
-                            {{ $daysLeftArray[$personnelPresent->id] }}
+                        @php $daysLeft = $daysLeftArray[$personnelPresent->id] ?? null; @endphp
+                        @if(!is_null($daysLeft))
+                            {{ $daysLeft }}
                         @else
-                            <p class="text-warning" >No payments !</p>
+                            <p class="text-warning"><b>No payments!</b></p>
                         @endif
                     </td>
                 </tr>
-                
             @empty
-                
             @endforelse
         </table>
 
@@ -114,12 +127,17 @@
                 <tr>
                     <td> <b>{{ $recentMember->id }}</b></td>
                     <td>{{ $recentMember->per_nom . ' ' . $recentMember->per_prenom }}</td>
-                    <td>{{ $recentMember->package->pac_title . ' : ' . intval($recentMember->package->pac_prix) }}
-                        <b>dh</b>
-                    </td>
+                    @php
+                        $pkgTitle = data_get($recentMember, 'package.pac_title', 'Basic');
+                        $pkgPrice = (int) data_get($recentMember, 'package.pac_prix', 0);
+                    @endphp
+                    <td>{{ $pkgTitle . ' : ' . $pkgPrice }} <b>dh</b></td>
                     <td>
-                        @if ($recentMember->coach_id)
-                            {{ $recentMember->coach->coa_nom . ' ' . $recentMember->coach->coa_prenom }}
+                        @php
+                            $coachName = trim((string) data_get($recentMember, 'coach.coa_nom', '') . ' ' . (string) data_get($recentMember, 'coach.coa_prenom', ''));
+                        @endphp
+                        @if ($coachName !== '')
+                            {{ $coachName }}
                         @else
                             <p class="text-primary"><b>Auto-coaching</b></p>
                         @endif

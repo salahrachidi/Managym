@@ -81,7 +81,7 @@
                             </div>
                         </li>
                         {{-- payments alert --}}
-                        @forelse ($PayAlertsnotifications as $PayAlertsnotification)
+                        {{-- @forelse ($PayAlertsnotifications as $PayAlertsnotification)
                             <li id="li_{{ $PayAlertsnotification->id }}">
                                 <div style="display: flex">
                                     <div class="">
@@ -106,7 +106,7 @@
                             <li>
                                 <p class="text-warning p-1"><b>no notifications to display !</b></p>
                             </li>
-                        @endforelse
+                        @endforelse --}}
 
                         {{-- new members --}}
                         <li>
@@ -126,7 +126,7 @@
                             </div>
                         </li>
                         {{-- notifications --}}
-                        @forelse ($NewUsersnotifications as $NewUsersnotification)
+                        {{-- @forelse ($NewUsersnotifications as $NewUsersnotification)
                             <li>
                                 <div style="display: flex">
                                     <div class="">
@@ -152,7 +152,7 @@
                             <li>
                                 <p class="text-warning p-1"><b>no notifications to display !</b></p>
                             </li>
-                        @endforelse
+                        @endforelse --}}
                         {{-- notifications --}}
                     </ul>
                 </div>
