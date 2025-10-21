@@ -43,15 +43,19 @@ It combines a clean dashboard interface, data visualization, and embedded IoT co
 
 | Dashboard | Members | Coaches |
 |------------|----------|----------|
-| ![Dashboard Placeholder](screenshots/dashboard.png) | ![Members Placeholder](screenshots/members.png) | ![Coaches Placeholder](screenshots/coaches.png) |
+| ![Dashboard Placeholder](https://github.com/salahrachidi/Managym/blob/main/screenshots/12.png) | ![Members Placeholder](https://github.com/salahrachidi/Managym/blob/main/screenshots/12.png) | ![Coaches Placeholder](https://github.com/salahrachidi/Managym/blob/main/screenshots/13.png) |
 
-| Packages | Payments | Statistics |
+| Account | Account | Transformations |
 |-----------|-----------|-------------|
-| ![Packages Placeholder](screenshots/packages.png) | ![Payments Placeholder](screenshots/payments.png) | ![Charts Placeholder](screenshots/charts.png) |
+| ![Packages Placeholder](https://github.com/salahrachidi/Managym/blob/main/screenshots/14.png) | ![Acccount Placeholder](https://github.com/salahrachidi/Managym/blob/main/screenshots/7.png) | ![Transformations Placeholder](https://github.com/salahrachidi/Managym/blob/main/screenshots/9.png) |
 
 | Attendance | Settings | Login |
 |-------------|-----------|--------|
-| ![Attendance Placeholder](screenshots/attendance.png) | ![Settings Placeholder](screenshots/settings.png) | ![Login Placeholder](screenshots/login.png) |
+| ![Attendance Placeholder](https://github.com/salahrachidi/Managym/blob/main/screenshots/7.png) | ![Settings Placeholder](https://github.com/salahrachidi/Managym/blob/main/screenshots/8.png) | ![Login Placeholder](https://github.com/salahrachidi/Managym/blob/main/screenshots/2.png) |
+
+| Member statistics | Members per month | accounts status & gender distrunution |
+|-------------|-----------|--------|
+| ![Member statistics Placeholder](https://github.com/salahrachidi/Managym/blob/main/screenshots/15.png) | ![Members per month](https://github.com/salahrachidi/Managym/blob/main/screenshots/16.png) | ![accounts status & gender distrunution](https://github.com/salahrachidi/Managym/blob/main/screenshots/17.png) |
 
 ---
 
