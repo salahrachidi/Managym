@@ -53,8 +53,6 @@ It combines a clean dashboard interface, data visualization, and embedded IoT co
 |-------------|-----------|--------|
 | ![Attendance Placeholder](screenshots/attendance.png) | ![Settings Placeholder](screenshots/settings.png) | ![Login Placeholder](screenshots/login.png) |
 
-> 🖼️ *You can place your 17 captured screenshots in a `/screenshots` folder to replace the placeholders above.*
-
 ---
 
 ## 🔌 Arduino Attendance System (Prototype)
@@ -62,9 +60,8 @@ It combines a clean dashboard interface, data visualization, and embedded IoT co
 The IoT subsystem uses an **Arduino UNO** (or compatible board) connected to:  
 - **RFID reader** or **fingerprint sensor** for member authentication  
 - **LCD module** for feedback display  
-- **ESP8266 Wi‑Fi module** (optional) for data synchronization
+- **ESP8266 Wi‑Fi module** for data synchronization
 
-📸 *Add your photos and videos here:*  
 - ![Arduino Prototype Placeholder](hardware/arduino_prototype.jpg)  
 - 🎥 *Demo Video Placeholder* (insert YouTube or file link here)
 
@@ -109,8 +106,7 @@ php artisan serve
 
 ## 👨‍💻 Author
 
-**Salaheddine Rachidi** — [@salahrachidi](https://github.com/salahrachidi)  
-📧 *Insert your email or portfolio link here*
+**Salaheddine Rachidi** — [@salahrachidi](https://github.com/salahrachidi) 
 
 ---
 
