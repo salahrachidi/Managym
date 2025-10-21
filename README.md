@@ -59,7 +59,44 @@ It combines a clean dashboard interface, data visualization, and embedded IoT co
 
 ---
 
-## 🔌 Arduino Attendance System (Prototype)
+## 🎥 Arduino Attendance System — Video Demos
+
+<table>
+  <tr>
+    <td align="center">
+      <b>1️⃣ RFID Login Demo</b><br>
+      <video src="https://github.com/salahrachidi/Managym/blob/main/arduino/1.mp4" width="300" controls></video>
+    </td>
+    <td align="center">
+      <b>2️⃣ Fingerprint Entry</b><br>
+      <video src="https://github.com/salahrachidi/Managym/blob/main/hardware/videos/fingerprint.mp4" width="300" controls></video>
+    </td>
+    <td align="center">
+      <b>3️⃣ LCD + WiFi Feedback</b><br>
+      <video src="https://github.com/salahrachidi/Managym/blob/main/hardware/videos/lcd_feedback.mp4" width="300" controls></video>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <b>4️⃣ Access Denied Test</b><br>
+      <video src="https://github.com/salahrachidi/Managym/blob/main/hardware/videos/access_denied.mp4" width="300" controls></video>
+    </td>
+    <td align="center">
+      <b>5️⃣ Member Attendance Upload</b><br>
+      <video src="https://github.com/salahrachidi/Managym/blob/main/hardware/videos/upload.mp4" width="300" controls></video>
+    </td>
+    <td align="center">
+      <b>6️⃣ ESP8266 Communication</b><br>
+      <video src="https://github.com/salahrachidi/Managym/blob/main/hardware/videos/esp8266.mp4" width="300" controls></video>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3" align="center">
+      <b>7️⃣ Full System Overview</b><br>
+      <video src="https://github.com/salahrachidi/Managym/blob/main/hardware/videos/overview.mp4" width="500" controls></video>
+    </td>
+  </tr>
+</table>
 
 The IoT subsystem uses an **Arduino UNO** (or compatible board) connected to:  
 - **RFID reader** or **fingerprint sensor** for member authentication  
