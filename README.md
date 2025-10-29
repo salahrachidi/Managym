@@ -43,19 +43,19 @@ It combines a clean dashboard interface, data visualization, and embedded IoT co
 
 | Dashboard | Members | Coaches |
 |------------|----------|----------|
-| ![Dashboard Placeholder](https://github.com/salahrachidi/Managym/blob/main/assets/photos/screenshots/1.png) | ![Members Placeholder](https://github.com/salahrachidi/Managym/blob/main/assets/photos/screenshots/12.png) | ![Coaches Placeholder](https://github.com/salahrachidi/Managym/blob/main/assets/photos/screenshots/13.png) |
+| ![Dashboard Placeholder](https://github.com/salahrachidi/Managym/blob/main/assets/photos/1.png) | ![Members Placeholder](https://github.com/salahrachidi/Managym/blob/main/assets/photos/12.png) | ![Coaches Placeholder](https://github.com/salahrachidi/Managym/blob/main/assets/photos/13.png) |
 
 | Register | Account | Transformations |
 |-----------|-----------|-------------|
-| ![Packages Placeholder](https://github.com/salahrachidi/Managym/blob/main/assets/photos/screenshots/14.png) | ![Acccount Placeholder](https://github.com/salahrachidi/Managym/blob/main/assets/photos/screenshots/7.png) | ![Transformations Placeholder](https://github.com/salahrachidi/Managym/blob/main/assets/photos/screenshots/9.png) |
+| ![Packages Placeholder](https://github.com/salahrachidi/Managym/blob/main/assets/photos/14.png) | ![Acccount Placeholder](https://github.com/salahrachidi/Managym/blob/main/assets/photos/7.png) | ![Transformations Placeholder](https://github.com/salahrachidi/Managym/blob/main/assets/photos/9.png) |
 
 | Attendance | Settings | Login |
 |-------------|-----------|--------|
-| ![Attendance Placeholder](https://github.com/salahrachidi/Managym/blob/main/assets/photos/screenshots/7.png) | ![Settings Placeholder](https://github.com/salahrachidi/Managym/blob/main/assets/photos/screenshots/8.png) | ![Login Placeholder](https://github.com/salahrachidi/Managym/blob/main/assets/photos/screenshots/2.png) |
+| ![Attendance Placeholder](https://github.com/salahrachidi/Managym/blob/main/assets/photos/7.png) | ![Settings Placeholder](https://github.com/salahrachidi/Managym/blob/main/assets/photos/8.png) | ![Login Placeholder](https://github.com/salahrachidi/Managym/blob/main/assets/photos/2.png) |
 
 | Member statistics | Members per month | accounts status & gender distrunution |
 |-------------|-----------|--------|
-| ![Member statistics Placeholder](https://github.com/salahrachidi/Managym/blob/main/assets/photos/screenshots/15.png) | ![Members per month](https://github.com/salahrachidi/Managym/blob/main/assets/photos/screenshots/16.png) | ![accounts status & gender distrunution](https://github.com/salahrachidi/Managym/blob/main/assets/photos/screenshots/17.png) |
+| ![Member statistics Placeholder](https://github.com/salahrachidi/Managym/blob/main/assets/photos/15.png) | ![Members per month](https://github.com/salahrachidi/Managym/blob/main/assets/photos/16.png) | ![accounts status & gender distrunution](https://github.com/salahrachidi/Managym/blob/main/assets/photos/17.png) |
 
 ---
 
